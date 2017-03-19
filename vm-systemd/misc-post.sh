@@ -16,6 +16,10 @@ fi
 # qubesdb-read fails
 INTERFACE=eth0 /usr/lib/qubes/setup-ip
 
+if [ -d /rw/config/rc.local.d ]
+then
+    run-parts /rw/config/rc.local.d
+fi
 if [ -x /rw/config/rc.local ] ; then
     /rw/config/rc.local
 fi
